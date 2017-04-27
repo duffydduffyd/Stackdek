@@ -17,3 +17,4 @@ Group project mimicking stack overflow.
 
 ## When not logged in
 [ ] Users can view a list of all questions, comments, and answers.
+..
