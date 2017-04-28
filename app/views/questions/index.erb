@@ -8,7 +8,7 @@
       <div class="question_entry">
       <h2><a href=<%="/questions/#{question.id}"%>><%= "#{question.title}"%></a></h2>
       <% if logged_in? %>
-        <%= erb :_vote , :locals => {:question => question}%>
+        <%= erb :_voteForQuestion , :locals => {:question => question}%>
       <% end %>
       <p> vote count:<%= question.votes.count %></p>
       <p><%= "by: #{question.author.user_name}"%></p>

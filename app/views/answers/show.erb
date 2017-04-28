@@ -1,7 +1,8 @@
 <div class="container">
 
-  <h1><%= @answer.answer_text%></h1>
-
+  <p><%= @answer.answer_text%></p>
+  <p> <%= erb :_voteForAnswer %></p>
+  <p> vote count:<%= @answer.votes.count %></p>
 </div>
 
 <div class="comments">
