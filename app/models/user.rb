@@ -5,9 +5,6 @@ class User < ActiveRecord::Base
   has_many :answers_authored, class_name: Answer, foreign_key: :author
   has_many :answers_received, through: :questions, source: :answers
   has_many :votes
-
-
-
   include BCrypt
 
   def password

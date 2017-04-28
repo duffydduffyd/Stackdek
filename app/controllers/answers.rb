@@ -23,5 +23,6 @@ end
 #GET answer BY ID
 get '/answer/:id' do
   @answer = Answer.find(params[:id])
+  @comments_on_answer = @answer.comments
   erb :'answers/show'
 end

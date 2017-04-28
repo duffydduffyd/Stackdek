@@ -1,14 +1,14 @@
 <div class="container">
-  <ul>
-   <h1>List of All Answers</h1>
-   <% if logged_in? %>
-   <a href="/answers/new">Add an Answer</a>
-   <% end %>
-    <% @all_answer.each do |answer| %>
-      <div class="answer_entry">
-      <h2><a href=<%="/answer/#{answer.id}"%>><%= "#{answer.answer_text}"%></a></h2>
-      <p><%= "by: #{answer.author.user_name}"%></p>
-      </div>
+
+  <h1><%= @answer.answer_text%></h1>
+
+</div>
+
+<div class="comments">
+  <h2>Comments</h2>
+    <% @comments_on_answer.each do |comment|%>
+      <p><%= "#{comment.comment_text}" %></p>
+      <p><%= "Posted by: #{comment.author.user_name} on #{comment.created_at}" %></p>
+      <hr>
     <%end%>
-  </ul>
 </div>
