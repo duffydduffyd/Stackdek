@@ -1,0 +1,9 @@
+
+<% unless logged_in? %>
+  <form action='/users' method='post'>create new profile
+    <input type='text' name='user[user_name]' placeholder='user name'>
+    <input type='text' name='user[email]' placeholder='email'>
+    <input type='password' name='user[password]' placeholder='password'>
+    <input type="submit" value="Sign me up">
+  </form>
+<% end %>
