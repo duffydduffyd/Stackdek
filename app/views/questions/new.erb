@@ -1,0 +1,8 @@
+<h3>Write a new question:</h3>
+
+<form id="question" method="post" action="/questions">
+  <input type="text" name="question[title]" placeholder="Your Title">
+  <input type="text" name="question[body]" placeholder="Question Text">
+  <input type="hidden" name="question[author_id]" value="<%=session[:id]%>">
+  <input type="submit" value="Submit Question">
+</form>
