@@ -10,7 +10,6 @@ get '/questions/:question_id/answers/new' do
 end
 
 post '/answers' do
-  p params
   @answer = Answer.new(params[:answer])
   if @answer.save
     redirect "/questions"
