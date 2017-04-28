@@ -1,3 +1,4 @@
+
 # Create 14 users
 15.times do
   user = User.create!(user_name: Faker::Internet.user_name, email: Faker::Internet.safe_email, password: "password")
@@ -15,6 +16,7 @@ end
 
 
 # Create 20 answers for 10 randomly picked questions so that we have multiple answers for for some questions.
+
 20.times do
   user_id = User.all.pluck(:id).sample
   question_id = Question.all.pluck(:id).sample

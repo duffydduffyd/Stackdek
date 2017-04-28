@@ -3,6 +3,13 @@ get '/' do
   erb :'/index'
 end
 
+
+get '/users' do
+  @all_users = User.all
+  erb :'/users/index'
+end
+
+
 post '/users' do
   @user = User.new(params[:user])
   if @user.save
@@ -17,4 +24,11 @@ end
 get '/users/:id' do
   @user = User.find(params[:id])
   erb :'users/show'
+end
+
+
+get '/users/:user_name/questions' do
+  @user = User.find_by(params[user_name])
+  @questions = @user.questions
+  erb :'questions/index'
 end
