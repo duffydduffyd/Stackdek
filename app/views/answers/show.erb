@@ -1,0 +1,14 @@
+<div class="container">
+  <ul>
+   <h1>List of All Answers</h1>
+   <% if logged_in? %>
+   <a href="/answers/new">Add an Answer</a>
+   <% end %>
+    <% @all_answer.each do |answer| %>
+      <div class="answer_entry">
+      <h2><a href=<%="/answer/#{answer.id}"%>><%= "#{answer.answer_text}"%></a></h2>
+      <p><%= "by: #{answer.author.user_name}"%></p>
+      </div>
+    <%end%>
+  </ul>
+</div>

@@ -7,6 +7,7 @@
   </div>
   <div class="responses">
     <h2>Responses</h2>
+      <a href="/questions/<%=@question.id%>/answers/new">Add an Answer</a>
       <% @question.answers.each do |answer|%>
         <p><%= "#{answer.answer_text}" %></p>
         <p><%= "Posted by: #{@question.author.user_name} on #{@question.created_at}" %></p>
@@ -14,6 +15,3 @@
       <%end%>
   </div>
 </div>
-
-
-

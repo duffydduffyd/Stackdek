@@ -2,7 +2,7 @@
   <ul>
    <h1>List of All Questions</h1>
    <% if logged_in? %>
-   <a href="/questions/new">add question</a>
+   <a href="/questions/new">Add a Question</a>
    <% end %>
     <% @all_questions.each do |question| %>
       <div class="question_entry">
