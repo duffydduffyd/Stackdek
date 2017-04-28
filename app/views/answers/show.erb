@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @answer.answer_text%></h1>
+
+</div>
+
+<div class="comments">
+  <h2>Comments</h2>
+    <% @comments_on_answer.each do |comment|%>
+      <p><%= "#{comment.comment_text}" %></p>
+      <p><%= "Posted by: #{comment.author.user_name} on #{comment.created_at}" %></p>
+      <hr>
+    <%end%>
+</div>

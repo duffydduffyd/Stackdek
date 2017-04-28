@@ -5,15 +5,28 @@
     <p><%= "by: #{@question.author.user_name}"%></p>
     <p><%= "Posted on: #{@question.created_at}" %></p>
   </div>
-  <div class="responses">
-    <h2>Responses</h2>
-      <% @question.answers.each do |answer|%>
-        <p><%= "#{answer.answer_text}" %></p>
+
+  <div class="comments">
+    <h2>Comments</h2>
+      <% @comments_on_question.each do |comment|%>
+        <p><%= "#{comment.comment_text}" %></p>
+        <p><%= "Posted by: #{comment.author.user_name} on #{comment.created_at}" %></p>
+        <hr>
+      <%end%>
+  </div>
+
+  <div class="answers">
+    <h2>Answers</h2>
+      <% @answers.each do |answer|%>
+        <p><a href=<%="/answers/#{answer.id}"%>><%= "#{answer.answer_text}" %></a></p>
         <p><%= "Posted by: #{@question.author.user_name} on #{@question.created_at}" %></p>
         <hr>
       <%end%>
   </div>
 </div>
+
+
+
 
 
 
