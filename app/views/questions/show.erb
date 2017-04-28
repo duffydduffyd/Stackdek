@@ -18,6 +18,7 @@
     <h2>Answers</h2>
       <% @answers.each do |answer|%>
         <p><a href=<%="/answers/#{answer.id}"%>><%= "#{answer.answer_text}" %></a></p>
+      <%end%>
   <div class="responses">
     <h2>Responses</h2>
       <a href="/questions/<%=@question.id%>/answers/new">Add an Answer</a>
