@@ -10,6 +10,7 @@ get '/questions/:question_id/answers/new' do
 end
 
 post '/answers' do
+  p params
   @answer = Answer.new(params[:answer])
   if @answer.save
     redirect "/questions"
@@ -21,7 +22,7 @@ end
 
 
 #GET answer BY ID
-get '/answer/:id' do
+get '/answers/:id' do
   @answer = Answer.find(params[:id])
   @comments_on_answer = @answer.comments
   erb :'answers/show'
