@@ -1,0 +1,9 @@
+<h1>Create a new answer:</h1>
+
+<p><label>Answer:</label></p>
+<form method="POST" action="/answers">
+  <input type="text" name="answer[answer_text]" placeholder="Your Answer">
+  <input type="hidden" name="answer[question_id]" value="<%=@question.id%>">
+  <input type="hidden" name="answer[author_id]" value="<%=session[:id]%>">
+  <input type="submit" value="Submit Answer">
+</form>
