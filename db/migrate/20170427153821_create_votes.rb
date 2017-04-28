@@ -5,5 +5,6 @@ class CreateVotes < ActiveRecord::Migration
       t.integer :voter_id, null: false
 
       t.timestamps(null: false)
+    end
   end
 end
