@@ -2,6 +2,8 @@
   <div class="question_post">
     <h1><%= @question.title %></h1>
     <p><%= @question.body %></p>
+    <p><%= erb :'_voteForQuestion', :locals => {:question => @question}%></p>
+    <p> vote count:<%= @question.votes.count %></p>
     <p><%= "by: #{@question.author.user_name}"%></p>
     <p><%= "Posted on: #{@question.created_at}" %></p>
   </div>
