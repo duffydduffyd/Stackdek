@@ -1,0 +1,13 @@
+<div class="container">
+  <ul>
+   <h1>List of All Users</h1>
+    <% @all_users.each do |user| %>
+    <li><h2><%= "#{user.user_name}"%></h2></li>
+    <a href='/users/:user_name/questions'><%="Questions posted by #{user.user_name}"%></a>
+
+    <br>
+    <%end%>
+  </ul>
+</div>
+
+

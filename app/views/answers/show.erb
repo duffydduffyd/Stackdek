@@ -1,0 +1,17 @@
+<div class="container">
+
+  <p><%= @answer.answer_text%></p>
+  <% if logged_in? %>
+    <p> <%= erb :_voteForAnswer %></p>
+  <% end %>
+  <p> vote count:<%= @answer.votes.count %></p>
+</div>
+
+<div class="comments">
+  <h2>Comments</h2>
+    <% @comments_on_answer.each do |comment|%>
+      <p><%= "#{comment.comment_text}" %></p>
+      <p><%= "Posted by: #{comment.author.user_name} on #{comment.created_at}" %></p>
+      <hr>
+    <%end%>
+</div>

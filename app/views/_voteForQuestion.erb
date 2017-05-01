@@ -1,0 +1,6 @@
+<form action='/votes' method='post'>  
+  <input type='hidden' name='vote[voter_id]' value='<%= current_user.id%>' >
+  <input type='hidden' name='vote[votable_id]' value='<%= question.id %>' >
+  <input type='hidden' name='vote[votable_type]' value='Question' >
+  <input type="submit" value="Vote for this Question">
+</form>

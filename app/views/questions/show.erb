@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="question_post">
+    <h1><%= @question.title %></h1>
+    <p><%= @question.body %></p>
+    <% if logged_in? %>
+      <p><%= erb :'_voteForQuestion', :locals => {:question => @question}%></p>
+    <% end %>
+    <p> vote count:<%= @question.votes.count %></p>
+    <p><%= "by: #{@question.author.user_name}"%></p>
+    <p><%= "Posted on: #{@question.created_at}" %></p>
+  </div>
+  
+  <div class="comments">
+    <h2>Comments</h2>
+    <% if logged_in? %>
+      <a href="/questions/<%= @question.id %>/comments/new">comment on this question</a>
+    <% end %>  
+      <% @comments_on_question.each do |comment|%>
+        <p><%= "#{comment.comment_text}" %></p>
+        <p><%= "Posted by: #{comment.author.user_name} on #{comment.created_at}" %></p>
+        <hr>
+      <%end%>
+  </div>
+
+  <div class="answers">
+    <h2>Answers</h2>
+      <% @answers.each do |answer|%>
+        <p><a href=<%="/answers/#{answer.id}"%>><%= "#{answer.answer_text}" %></a></p>
+      <%end%>
+  <div class="responses">
+    <h2>Responses</h2>
+      <% if logged_in? %>  
+        <a href="/questions/<%=@question.id%>/answers/new">Add an Answer</a>
+       <% end %>  
+      <% @question.answers.each do |answer|%>
+        <p><%= "#{answer.answer_text}" %></p>
+
+        <p><%= "Posted by: #{@question.author.user_name} on #{@question.created_at}" %></p>
+        <hr>
+      <%end%>
+  </div>
+</div>
+
