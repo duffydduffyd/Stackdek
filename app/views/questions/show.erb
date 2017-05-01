@@ -29,7 +29,9 @@
       <%end%>
   <div class="responses">
     <h2>Responses</h2>
-      <a href="/questions/<%=@question.id%>/answers/new">Add an Answer</a>
+      <% if logged_in? %>  
+        <a href="/questions/<%=@question.id%>/answers/new">Add an Answer</a>
+       <% end %>  
       <% @question.answers.each do |answer|%>
         <p><%= "#{answer.answer_text}" %></p>
 
