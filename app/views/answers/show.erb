@@ -1,7 +1,9 @@
 <div class="container">
 
   <p><%= @answer.answer_text%></p>
-  <p> <%= erb :_voteForAnswer %></p>
+  <% if logged_in? %>
+    <p> <%= erb :_voteForAnswer %></p>
+  <% end %>
   <p> vote count:<%= @answer.votes.count %></p>
 </div>
 
