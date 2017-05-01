@@ -1,3 +1,20 @@
-"hello user with id: <%= @user.id %> and name: <%= @user.user_name %>"
+"hello <%= @user.user_name %>"
 
-
+<div class="container">
+  <ul>
+   <h1>List of All Questions</h1>
+   <% if logged_in? %>
+   <a href="/questions/new">Add a Question</a>
+   <% end %>
+    <% @questions.each do |question| %>
+      <div class="question_entry">
+      <h2><a href=<%="/questions/#{question.id}"%>><%= "#{question.title}"%></a></h2>
+      <% if logged_in? %>
+        <%= erb :_voteForQuestion , :locals => {:question => question}%>
+      <% end %>
+      <p> vote count:<%= question.votes.count %></p>
+      <p><%= "by: #{question.author.user_name}"%></p>
+      </div>
+    <%end%>
+  </ul>
+</div>
